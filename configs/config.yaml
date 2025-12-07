@@ -1,0 +1,33 @@
+data:
+  raw_path: "data/raw/housing.csv"
+  processed_path: "data/processed/"
+
+model:
+  test_size: 0.2
+  random_state: 42
+
+features:
+  numeric_features:
+    - "sqft_living"
+    - "sqft_lot"
+    - "sqft_above"
+    - "sqft_basement"
+  categorical_features:
+    - "bedrooms"
+    - "bathrooms"
+    - "floors"
+    - "waterfront"
+    - "view"
+    - "condition"
+    - "grade"
+
+preprocessing:
+  outlier_method: "cap"  # cap, remove, transform
+  use_log_transform: true
+  create_new_features: true
+
+training:
+  mode: "simple"  # simple, full, optimize
+  save_models: true
+  create_report: true
+  top_n_features: 20
